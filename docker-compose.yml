@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chicken_curry:/chicken_curry
+    command: >
+      sh -c "python manage.py 0.0.0.0:8000"
