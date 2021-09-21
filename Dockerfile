@@ -11,7 +11,8 @@ RUN mkdir /chicken_curry
 WORKDIR /chicken_curry
 COPY ./chicken_curry /chicken_curry
 RUN adduser -D user
-USER user
 RUN chmod -R 777 /chicken_curry
+USER user
+
 
 
