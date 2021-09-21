@@ -5,14 +5,13 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /requirements.txt
 
-RUN pip install -r requirements.txt
+RUN adduser -D user
+USER user
 
 RUN mkdir /chicken_curry
+RUN pip install -r requirements.txt
 WORKDIR /chicken_curry
 COPY ./chicken_curry /chicken_curry
-RUN adduser -D user
-RUN chmod -R 777 /chicken_curry
-USER user
 
 
 
